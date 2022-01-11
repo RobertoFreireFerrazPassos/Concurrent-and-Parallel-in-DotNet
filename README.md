@@ -81,13 +81,14 @@ and a multicore device
 </p>
 
 
-Glossary:
+## Glossary:
 
-**PROCESS** : A **process** is an instance of a program running within a computer system. Each process has one or more threads of execution, and no thread can exist outside a process.
+**LOCK** : The lock statement acquires the mutual-exclusion lock for a given object, executes a statement block, and then releases the lock. While a lock is held, the thread that holds the lock can again acquire and release the lock. Any other thread is blocked from acquiring the lock and waits until the lock is released.
 
-**THREAD** : A **thread** is a unit of computation (an independent set of programming instructions designed to achieve a particular result), which the operating system scheduler independently executes and manages.
+**PROCESS** : A process is an instance of a program running within a computer system. Each process has one or more threads of execution, and no thread can exist outside a process.
 
-**THREADSAFE** : A method is called **threadsafe** when the data and state don’t get corrupted if two or more threads attempt to
+**THREAD** : A thread is a unit of computation (an independent set of programming instructions designed to achieve a particular result), which the operating system scheduler independently executes and manages.
+
+**THREADSAFE** : A method is called threadsafe when the data and state don’t get corrupted if two or more threads attempt to
 access and modify the data or state at the same time.
-
 
