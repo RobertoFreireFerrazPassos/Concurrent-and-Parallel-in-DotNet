@@ -81,6 +81,55 @@ and a multicore device
 </p>
 
 
+### Mutual Exclusion
+
+
+Two threads (Thread 1 and Thread 2) run in parallel, both trying to access and modify the shared value x. If Thread 2 tries to read from the same memory location while Thread 1 writes back an updated value, the value of x changes. This result is data corruption or race condition
+
+Lock solves this issue [Lock in C#](https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/statements/lock) but can lead to deadlock.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/41349878/149014937-598c7375-57ac-4c28-91f6-4b759536f143.png?raw=true">
+</p>
+
+
+### Deadlock
+
+
+A Deadlock is a situation where an application locks up because two or more activities are waiting for each other to finish.
+
+Thread 1 acquires lock A.
+Thread 2 acquires lock B.
+Thread 1 attempts to acquire lock B, but it is already held by Thread 2 and thus Thread 1 blocks until B is released.
+Thread 2 attempts to acquire lock A, but it is held by Thread 1 and thus Thread 2 blocks until A is released.
+
+```csharp
+    
+    object lockA = new object();
+    object lockB = new object();
+
+    Thread 1 void t1()
+    {
+        lock (lockA)
+        {
+            lock (lockB)
+            {
+                /* ... */
+            }
+        }
+    }
+    Thread 2 void t2()
+    {
+        lock (lockB)
+        {
+            lock (lockA)
+                {
+                /* ... */
+                }
+        }
+    }
+```
+
 ## Glossary:
 
 **LOCK** : The lock statement acquires the mutual-exclusion lock for a given object, executes a statement block, and then releases the lock. While a lock is held, the thread that holds the lock can again acquire and release the lock. Any other thread is blocked from acquiring the lock and waits until the lock is released.
