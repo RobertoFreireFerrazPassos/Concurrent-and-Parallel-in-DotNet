@@ -69,12 +69,6 @@ Each task has a different shade, indicating that the context switch in a single-
 
 Multithreading is an extension of the concept of multitasking, aiming to improve the performance of a program by maximizing and optimizing computer resources. Multithreading is a form of concurrency that uses multiple threads of execution. 
 
-Notes:
-
-A process is an instance of a program running within a computer system. Each process has one or more threads of execution, and no thread can exist outside a process.
-
-A thread is a unit of computation (an independent set of programming instructions designed to achieve a particular result), which the operating system scheduler independently executes and manages.
-
 Multithreading differs from multitasking: Unlike multitasking, with multithreading, the threads share resources
 
 Multithreading is hardware-agnostic, which means that it can be performed regardless of the number of cores. Parallel programming is a superset of multithreading. You could use multithreading to parallelize a program by sharing resources in the same process, for example, but you could also parallelize a program by executing the computation in multiple processes or even in different computers. 
@@ -85,4 +79,15 @@ and a multicore device
 <p align="center">
   <img src="https://user-images.githubusercontent.com/41349878/149012012-df3c4963-eecf-4587-99bf-77101a45da5c.png?raw=true">
 </p>
+
+
+Glossary:
+
+**PROCESS** : A **process** is an instance of a program running within a computer system. Each process has one or more threads of execution, and no thread can exist outside a process.
+
+**THREAD** : A **thread** is a unit of computation (an independent set of programming instructions designed to achieve a particular result), which the operating system scheduler independently executes and manages.
+
+**THREADSAFE** : A method is called **threadsafe** when the data and state don’t get corrupted if two or more threads attempt to
+access and modify the data or state at the same time.
+
 
