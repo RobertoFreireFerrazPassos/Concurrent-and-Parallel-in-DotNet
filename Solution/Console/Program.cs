@@ -7,7 +7,7 @@ namespace ConsoleApp
     {
         static void Main()
         {
-            RunPrintMultithreadedExample();
+            RunDisplayNumbersMultithreadedExample();
             Console.ReadKey();
         }
 
@@ -17,6 +17,24 @@ namespace ConsoleApp
 
             printer.Print();
             printer.PrintMultithreaded();
+        }
+
+        public static void RunPrintSingleValueMultithreadedExample()
+        {
+            var printer = new Printer();
+
+            printer.PrintSingleValueMultithreaded();
+        }
+
+        public static void RunDisplayNumbersMultithreadedExample()
+        {
+            var printer = new Printer();
+
+            Console.WriteLine("------ Issue ---------");
+            printer.DisplayNumbersMultithreaded();
+            Console.WriteLine("------ Fixed ----------");
+            printer.DisplayNumbersMultithreadedFixed();
+            Console.WriteLine("----------------------");
         }
     }
 }
