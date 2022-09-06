@@ -1,14 +1,6 @@
 # Concurrent and Parallel in C#
 
-
-## Reference:
-
-
-Riccardo Terrell - Concurrency in .NET_ Modern patterns of concurrent and parallel programming-Manning (2018)
-
-
 ## Content
-
 
 ### Sequential programming
 
@@ -141,3 +133,9 @@ Thread 2 attempts to acquire lock A, but it is held by Thread 1 and thus Thread 
 **THREADSAFE** : A method is called threadsafe when the data and state don’t get corrupted if two or more threads attempt to
 access and modify the data or state at the same time.
 
+## Reference:
+
+
+Book Riccardo Terrell - Concurrency in .NET_ Modern patterns of concurrent and parallel programming-Manning (2018)
+
+Book Parallel Programming and Concurrency with C# 10 and .NET 6: A modern approach to building faster, more responsive, and asynchronous .NET applications using C#
